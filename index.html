@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#087f8c">
+    <meta name="description" content="Sehat Bersama - Pendamping layanan kesehatan untuk lansia dan keluarga">
+    <title>Sehat Bersama</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">❤️‍🩹</div>
+    <h1>SEHAT BERSAMA</h1>
+    <p>Pendamping layanan kesehatan</p>
+</header>
+
+<main class="container">
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="screen active">
+
+        <div class="welcome">
+
+            <div class="welcome-icon">👋</div>
+
+            <h2>Selamat Datang</h2>
+
+            <p>
+                Web pendamping kesehatan yang dibuat agar
+                lebih mudah digunakan oleh lansia,
+                keluarga, dan pengguna yang membutuhkan bantuan.
+            </p>
+
+            <div class="roles">
+
+                <button class="role" onclick="login('lansia')">
+                    <span class="role-icon">🧓</span>
+                    <span class="role-text">SAYA LANSIA</span>
+                </button>
+
+                <button class="role" onclick="login('keluarga')">
+                    <span class="role-icon">👨‍👩‍👧</span>
+                    <span class="role-text">SAYA KELUARGA</span>
+                </button>
+
+                <button class="role" onclick="login('petugas')">
+                    <span class="role-icon">🧑‍⚕️</span>
+                    <span class="role-text">SAYA PETUGAS</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LANSIA ================= -->
+
+    <section id="lansia" class="screen">
+
+        <div class="toolbar">
+            <button class="tool" onclick="toggleBig()">🔠 Huruf</button>
+            <button class="tool" onclick="toggleContrast()">◐ Kontras</button>
+            <button class="tool" onclick="home()">🏠</button>
+        </div>
+
+        <div class="greeting">
+            <h2>Halo, Bapak/Ibu 👋</h2>
+            <p>
+                Pilih gambar sesuai kebutuhan.
+                Tombol dapat dibacakan dengan suara.
+            </p>
+        </div>
+
+        <div class="grid">
+
+            <button class="menu" onclick="page('berobat')">
+                <span class="menu-icon">🏥</span>
+                <span class="menu-title">BEROBAT</span>
+                <span class="menu-desc">Bantuan sebelum berobat</span>
+            </button>
+
+            <button class="menu" onclick="page('jadwal')">
+                <span class="menu-icon">📅</span>
+                <span class="menu-title">JADWAL</span>
+                <span class="menu-desc">Jadwal berobat</span>
+            </button>
+
+            <button class="menu" onclick="page('obat')">
+                <span class="menu-icon">💊</span>
+                <span class="menu-title">OBAT</span>
+                <span class="menu-desc">Pengingat obat</span>
+            </button>
+
+            <button class="menu" onclick="page('faskes')">
+                <span class="menu-icon">📍</span>
+                <span class="menu-title">CARI FASKES</span>
+                <span class="menu-desc">Cari fasilitas kesehatan</span>
+            </button>
+
+            <button class="menu" onclick="page('hubungi')">
+                <span class="menu-icon">👨‍👩‍👧</span>
+                <span class="menu-title">KELUARGA</span>
+                <span class="menu-desc">Hubungi keluarga</span>
+            </button>
+
+            <button class="menu" onclick="page('bantuan')">
+                <span class="menu-icon">🙋</span>
+                <span class="menu-title">BANTUAN</span>
+                <span class="menu-desc">Saya butuh bantuan</span>
+            </button>
+
+        </div>
+
+        <button class="danger" onclick="emergency()">
+            🆘 DARURAT
+            <small>Tekan jika membutuhkan bantuan segera</small>
+        </button>
+
+    </section>
+
+
+    <!-- ================= KELUARGA ================= -->
+
+    <section id="keluarga" class="screen">
+
+        <div class="toolbar">
+            <button class="tool" onclick="home()">🏠 Beranda</button>
+            <button class="tool" onclick="toggleBig()">🔠 Huruf</button>
+        </div>
+
+        <div class="greeting">
+            <h2>Dashboard Keluarga 👨‍👩‍👧</h2>
+            <p>
+                Bantu anggota keluarga memantau kebutuhan kesehatan.
+            </p>
+        </div>
+
+        <div class="grid">
+
+            <button class="menu" onclick="page('dataLansia')">
+                <span class="menu-icon">👵</span>
+                <span class="menu-title">DATA LANSIA</span>
+                <span class="menu-desc">Data anggota keluarga</span>
+            </button>
+
+            <button class="menu" onclick="page('pantauObat')">
+                <span class="menu-icon">💊</span>
+                <span class="menu-title">OBAT</span>
+                <span class="menu-desc">Pantau obat</span>
+            </button>
+
+            <button class="menu" onclick="page('jadwalKeluarga')">
+                <span class="menu-icon">📅</span>
+                <span class="menu-title">JADWAL</span>
+                <span class="menu-desc">Jadwal berobat</span>
+            </button>
+
+            <button class="menu" onclick="page('hubungi')">
+                <span class="menu-icon">📞</span>
+                <span class="menu-title">KONTAK</span>
+                <span class="menu-desc">Hubungi lansia</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PETUGAS ================= -->
+
+    <section id="petugas" class="screen">
+
+        <div class="toolbar">
+            <button class="tool" onclick="home()">🏠 Beranda</button>
+            <button class="tool" onclick="toggleBig()">🔠 Huruf</button>
+        </div>
+
+        <div class="greeting">
+            <h2>Dashboard Petugas 🧑‍⚕️</h2>
+            <p>Area demo untuk membantu pengguna.</p>
+        </div>
+
+        <div class="grid">
+
+            <button class="menu" onclick="page('pasien')">
+                <span class="menu-icon">🧓</span>
+                <span class="menu-title">PASIEN</span>
+                <span class="menu-desc">Data pengguna</span>
+            </button>
+
+            <button class="menu" onclick="page('jadwalPetugas')">
+                <span class="menu-icon">📅</span>
+                <span class="menu-title">JADWAL</span>
+                <span class="menu-desc">Jadwal pelayanan</span>
+            </button>
+
+            <button class="menu" onclick="page('bantuan')">
+                <span class="menu-icon">🙋</span>
+                <span class="menu-title">BANTUAN</span>
+                <span class="menu-desc">Bantu pengguna</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BEROBAT ================= -->
+
+    <section id="berobat" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>🏥 Berobat</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Petunjuk</h3>
+
+            <button class="option"
+                    onclick="say('Pilih fasilitas kesehatan yang ingin Anda datangi.')">
+                <span>🏥</span>
+                Pilih fasilitas kesehatan
+            </button>
+
+            <button class="option"
+                    onclick="say('Siapkan kartu identitas dan kartu jaminan kesehatan jika Anda memilikinya.')">
+                <span>🪪</span>
+                Siapkan kartu
+            </button>
+
+            <button class="option"
+                    onclick="say('Jika kesulitan, minta bantuan petugas.')">
+                <span>🧑‍⚕️</span>
+                Minta bantuan petugas
+            </button>
+
+        </div>
+
+        <div class="status">
+            🔊 Tekan pilihan untuk mendengarkan petunjuk.
+        </div>
+
+    </section>
+
+
+    <!-- ================= JADWAL ================= -->
+
+    <section id="jadwal" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>📅 Jadwal</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Jadwal berobat</h3>
+
+            <div class="row">
+                <span>🏥 Tempat</span>
+                <strong>Puskesmas</strong>
+            </div>
+
+            <div class="row">
+                <span>📅 Tanggal</span>
+                <strong>5 Oktober 2026</strong>
+            </div>
+
+            <div class="row">
+                <span>⏰ Jam</span>
+                <strong>09.00</strong>
+            </div>
+
+        </div>
+
+        <button class="primary"
+                onclick="say('Jadwal Anda adalah tanggal lima Oktober dua ribu dua puluh enam jam sembilan pagi.')">
+            🔊 DENGARKAN
+        </button>
+
+    </section>
+
+
+    <!-- ================= OBAT ================= -->
+
+    <section id="obat" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>💊 Obat</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Pengingat obat</h3>
+
+            <div class="row">
+                <span>⏰ Waktu</span>
+                <strong>07.00</strong>
+            </div>
+
+            <div class="row">
+                <span>💊 Status</span>
+                <strong id="medicineStatus">Belum</strong>
+            </div>
+
+            <button class="primary" onclick="medicineDone()">
+                ✅ SUDAH MINUM
+            </button>
+
+        </div>
+
+        <button class="option"
+                onclick="say('Waktunya minum obat sesuai petunjuk dokter. Jangan mengubah dosis tanpa berkonsultasi dengan tenaga kesehatan.')">
+            🔊 Dengarkan pengingat
+        </button>
+
+    </section>
+
+
+    <!-- ================= FASKES ================= -->
+
+    <section id="faskes" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>📍 Cari Faskes</h2>
+        </div>
+
+        <div class="card">
+
+            <button class="option" onclick="findLocation()">
+                <span>📍</span>
+                Gunakan lokasi saya
+            </button>
+
+            <button class="option"
+                    onclick="say('Puskesmas adalah salah satu fasilitas kesehatan yang dapat Anda pilih.')">
+                <span>🏥</span>
+                Puskesmas
+            </button>
+
+            <button class="option"
+                    onclick="say('Rumah sakit adalah fasilitas kesehatan yang menyediakan pelayanan lebih lengkap.')">
+                <span>🏨</span>
+                Rumah Sakit
+            </button>
+
+        </div>
+
+        <div id="locationResult"></div>
+
+    </section>
+
+
+    <!-- ================= HUBUNGI ================= -->
+
+    <section id="hubungi" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>👨‍👩‍👧 Keluarga</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Nomor keluarga</h3>
+
+            <div class="row">
+                <span>📞 Nomor</span>
+                <strong id="familyNumber">Belum diatur</strong>
+            </div>
+
+            <input id="familyInput"
+                   type="tel"
+                   placeholder="Contoh: 081234567890">
+
+            <button class="primary" onclick="saveFamily()">
+                💾 SIMPAN NOMOR
+            </button>
+
+        </div>
+
+        <button class="primary" onclick="callFamily()">
+            📞 HUBUNGI KELUARGA
+        </button>
+
+    </section>
+
+
+    <!-- ================= BANTUAN ================= -->
+
+    <section id="bantuan" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>🙋 Bantuan</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Butuh bantuan?</h3>
+
+            <p class="line">
+                Jika tidak mengerti cara menggunakan web,
+                mintalah bantuan keluarga atau petugas kesehatan.
+            </p>
+
+        </div>
+
+        <button class="option"
+                onclick="say('Silakan hubungi keluarga yang sudah Anda daftarkan.')">
+            👨‍👩‍👧 Hubungi keluarga
+        </button>
+
+        <button class="option"
+                onclick="say('Silakan minta bantuan petugas kesehatan di fasilitas kesehatan.')">
+            🧑‍⚕️ Minta bantuan petugas
+        </button>
+
+    </section>
+
+
+    <!-- ================= DATA LANSIA ================= -->
+
+    <section id="dataLansia" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>👵 Data Lansia</h2>
+        </div>
+
+        <div class="card">
+
+            <label>Nama lansia</label>
+            <input id="elderName" placeholder="Nama">
+
+            <label>Tanggal lahir</label>
+            <input id="elderBirth" type="date">
+
+            <label>Catatan</label>
+            <textarea id="elderNote"
+                      placeholder="Contoh: membutuhkan bantuan membaca"></textarea>
+
+            <button class="primary" onclick="saveElder()">
+                💾 SIMPAN
+            </button>
+
+        </div>
+
+        <div id="elderResult"></div>
+
+    </section>
+
+
+    <!-- ================= PANTAU OBAT ================= -->
+
+    <section id="pantauObat" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>💊 Pantau Obat</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Status obat lansia</h3>
+
+            <div class="status">
+                Waktu: 07.00<br>
+                Status:
+                <strong id="familyMedicine">Belum</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= JADWAL KELUARGA ================= -->
+
+    <section id="jadwalKeluarga" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>📅 Jadwal</h2>
+        </div>
+
+        <div class="card">
+
+            <div class="row">
+                <span>🏥 Tempat</span>
+                <strong>Puskesmas</strong>
+            </div>
+
+            <div class="row">
+                <span>📅 Tanggal</span>
+                <strong>5 Oktober 2026</strong>
+            </div>
+
+            <div class="row">
+                <span>⏰ Jam</span>
+                <strong>09.00</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PASIEN ================= -->
+
+    <section id="pasien" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>🧓 Pasien</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Pengguna demo</h3>
+
+            <div class="row">
+                <span>Nama</span>
+                <strong id="patientName">Belum ada</strong>
+            </div>
+
+            <div class="row">
+                <span>Kebutuhan</span>
+                <strong>Bantuan penggunaan</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= JADWAL PETUGAS ================= -->
+
+    <section id="jadwalPetugas" class="screen">
+
+        <div class="titlebar">
+            <button class="back" onclick="back()">←</button>
+            <h2>📅 Jadwal</h2>
+        </div>
+
+        <div class="card">
+
+            <h3>Pelayanan</h3>
+
+            <div class="row">
+                <span>👥 Pengguna</span>
+                <strong>5 orang</strong>
+            </div>
+
+            <div class="row">
+                <span>⏰ Jam</span>
+                <strong>08.00–14.00</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <strong>SEHAT BERSAMA</strong><br>
+    Prototype web pendamping kesehatan<br>
+    © 2026
+</footer>
+
+
+<!-- VOICE -->
+
+<div id="voice" class="voice">
+
+    <p id="voiceText"></p>
+
+    <div class="voice-buttons">
+
+        <button class="listen" onclick="repeatVoice()">
+            🔊 Dengarkan
+        </button>
+
+        <button class="close" onclick="closeVoice()">
+            Tutup
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- DARURAT -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-icon">🆘</div>
+
+        <h2>Keadaan Darurat?</h2>
+
+        <p>
+            Jika mengalami keadaan yang mengancam keselamatan,
+            segera minta bantuan orang di sekitar atau
+            layanan darurat.
+        </p>
+
+        <button class="call" onclick="callEmergency()">
+            📞 HUBUNGI BANTUAN
+        </button>
+
+        <button onclick="callFamily()">
+            👨‍👩‍👧 HUBUNGI KELUARGA
+        </button>
+
+        <button onclick="closeEmergency()">
+            KEMBALI
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

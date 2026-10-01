@@ -1,0 +1,450 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+:root{
+    --primary:#087f8c;
+    --secondary:#0aa6a6;
+    --bg:#f2fbfb;
+    --card:#ffffff;
+    --text:#18383b;
+    --border:#d5eaea;
+    --danger:#d62828;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+
+body.big{
+    font-size:18px;
+}
+
+body.contrast{
+    --bg:#000;
+    --card:#111;
+    --text:#fff;
+    --border:#fff;
+    --primary:#00ffff;
+    --secondary:#00ffff;
+}
+
+button{
+    cursor:pointer;
+    border:0;
+    font-weight:bold;
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+header{
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color:white;
+    text-align:center;
+    padding:20px 15px;
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.logo{
+    font-size:48px;
+}
+
+header h1{
+    font-size:28px;
+}
+
+header p{
+    margin-top:5px;
+    font-size:14px;
+}
+
+.container{
+    max-width:650px;
+    margin:auto;
+    padding:18px;
+}
+
+.screen{
+    display:none;
+}
+
+.screen.active{
+    display:block;
+}
+
+.welcome{
+    text-align:center;
+    padding:15px 0;
+}
+
+.welcome-icon{
+    font-size:80px;
+    margin:10px 0;
+}
+
+.welcome h2{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.welcome p{
+    line-height:1.6;
+    margin-bottom:22px;
+}
+
+.roles{
+    display:grid;
+    gap:15px;
+}
+
+.role{
+    background:var(--card);
+    color:var(--text);
+    border:3px solid var(--border);
+    border-radius:22px;
+    padding:22px;
+    min-height:130px;
+    box-shadow:0 4px 12px #0001;
+}
+
+.role-icon{
+    display:block;
+    font-size:52px;
+    margin-bottom:8px;
+}
+
+.role-text{
+    font-size:21px;
+}
+
+.toolbar{
+    display:flex;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.tool{
+    flex:1;
+    padding:13px 7px;
+    background:var(--card);
+    color:var(--text);
+    border:2px solid var(--border);
+    border-radius:13px;
+}
+
+.greeting{
+    background:var(--card);
+    border:2px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.greeting h2{
+    margin-bottom:7px;
+}
+
+.greeting p{
+    line-height:1.6;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.menu{
+    background:var(--card);
+    color:var(--text);
+    border:2px solid var(--border);
+    border-radius:20px;
+    min-height:145px;
+    padding:15px 8px;
+}
+
+.menu-icon{
+    display:block;
+    font-size:48px;
+    margin-bottom:8px;
+}
+
+.menu-title{
+    display:block;
+    font-size:17px;
+}
+
+.menu-desc{
+    display:block;
+    font-size:12px;
+    font-weight:normal;
+    margin-top:5px;
+}
+
+.danger{
+    width:100%;
+    margin-top:15px;
+    padding:20px;
+    border-radius:20px;
+    background:var(--danger);
+    color:white;
+    font-size:22px;
+}
+
+.danger small{
+    display:block;
+    font-size:13px;
+    margin-top:5px;
+}
+
+.titlebar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.back{
+    background:var(--card);
+    color:var(--text);
+    border:2px solid var(--border);
+    border-radius:12px;
+    padding:10px 15px;
+    font-size:20px;
+}
+
+.titlebar h2{
+    font-size:23px;
+}
+
+.card{
+    background:var(--card);
+    border:2px solid var(--border);
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:13px;
+}
+
+.card h3{
+    margin-bottom:12px;
+}
+
+.option{
+    width:100%;
+    text-align:left;
+    padding:18px;
+    margin-bottom:10px;
+    border-radius:16px;
+    background:#eaf8f8;
+    color:var(--text);
+    border:2px solid var(--border);
+    font-size:17px;
+}
+
+body.contrast .option{
+    background:#111;
+}
+
+.option span{
+    font-size:32px;
+    margin-right:8px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.row:last-child{
+    border-bottom:0;
+}
+
+.primary{
+    width:100%;
+    padding:16px;
+    background:var(--primary);
+    color:white;
+    border-radius:14px;
+    font-size:17px;
+    margin-top:10px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:15px;
+    border:2px solid var(--border);
+    border-radius:13px;
+    font-size:16px;
+    margin-top:6px;
+}
+
+label{
+    display:block;
+    margin-top:13px;
+    font-weight:bold;
+}
+
+textarea{
+    min-height:100px;
+}
+
+.status{
+    padding:15px;
+    border-radius:14px;
+    background:#e8f7ed;
+    color:#176b38;
+    margin-top:12px;
+    line-height:1.5;
+}
+
+.warning{
+    background:#fff2db;
+    color:#815000;
+}
+
+.line{
+    line-height:1.7;
+}
+
+.voice{
+    position:fixed;
+    bottom:15px;
+    left:15px;
+    right:15px;
+    max-width:620px;
+    margin:auto;
+    background:var(--card);
+    color:var(--text);
+    border:3px solid var(--primary);
+    border-radius:18px;
+    padding:13px;
+    display:none;
+    z-index:100;
+    box-shadow:0 5px 20px #0004;
+}
+
+.voice.show{
+    display:block;
+}
+
+.voice p{
+    margin-bottom:9px;
+    line-height:1.4;
+}
+
+.voice-buttons{
+    display:flex;
+    gap:8px;
+}
+
+.voice-buttons button{
+    flex:1;
+    padding:11px;
+    border-radius:12px;
+}
+
+.listen{
+    background:var(--primary);
+    color:white;
+}
+
+.close{
+    background:#ddd;
+    color:#222;
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:#000b;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:200;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:450px;
+    background:white;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    color:#222;
+}
+
+.modal-icon{
+    font-size:65px;
+    margin-bottom:10px;
+}
+
+.modal-box h2{
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.modal-box button{
+    width:100%;
+    padding:15px;
+    border-radius:13px;
+    margin-top:8px;
+    font-size:16px;
+}
+
+.call{
+    background:#d62828;
+    color:white;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    font-size:12px;
+    color:#668;
+}
+
+@media(max-width:430px){
+
+    .grid{
+        gap:8px;
+    }
+
+    .menu{
+        min-height:135px;
+    }
+
+    .menu-icon{
+        font-size:42px;
+    }
+
+    .menu-title{
+        font-size:15px;
+    }
+}
